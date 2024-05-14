@@ -21,10 +21,14 @@ jobs:
     steps:
       - name: my-step
         run: echo "Hello World!"
+      - run: |
+          echo "${{ inputs.service_name }}"
+        shell: bash
+      - uses: actions/checkout@v4
   trigger:
-    name: stag환경을 배포한다
+    name: stage 환경을 배포한다
     runs-on: deploy-runner
     steps:
-      - uses: actions/checkout@v4
+      - 
 
 
