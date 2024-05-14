@@ -25,10 +25,5 @@ jobs:
           echo "${{ inputs.service_name }}"
         shell: bash
       - uses: actions/checkout@v4
-  trigger:
-    name: stage 환경을 배포한다
-    runs-on: deploy-runner
-    steps:
-      - 
 
 
