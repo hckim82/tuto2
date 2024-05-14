@@ -1,8 +1,30 @@
-name: hello-world
-on: push
+name: 스테이지 환경  및 S3 업로드한다.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'S3에 업로드된 버전을 입력합니다. (Not Published Version)'
+        required: true
+      service_name:
+        description: 'Service Name'
+        required: true
+        type: string
+        default: ston-m2
+      env:
+        description: 'Environment'
+        required: false
+        type: string
+        default: stg
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
         run: echo "Hello World!"
+  trigger:
+    name: stag환경을 배포한다
+    runs-on: deploy-runner
+    steps:
+      - uses: actions/checkout@v4
+
+
